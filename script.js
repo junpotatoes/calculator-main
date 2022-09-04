@@ -1,5 +1,7 @@
 const result = document.querySelector('.result');
-const contents = document.querySelector('.contents')
+const contents = document.querySelector('.contents');
+const calculator = document.querySelector('.calculator');
+
 
 contents.addEventListener('click', function(event) {
   //버튼 눌렸을 때 진행되는 함수
@@ -13,6 +15,12 @@ contents.addEventListener('click', function(event) {
   if (target.matches('button')) {
     if (action === 'number') {
       console.log(buttonContent);
+      if (result.textContent === '0') {
+        result.textContent = buttonContent;
+      } else {
+        result.textContent += buttonContent;
+      }
+
     }
     
   }
